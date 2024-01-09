@@ -3,13 +3,15 @@
 }
 
 <div class="text-center">
-    <h1 class="display-5">WELCOME TO GALLOWS GAME</h1>
-    <hr>
+    
+    <div class="left">
+        <h1 class="display-">WELCOME TO GALLOWS GAME</h1>
+    </div>
     <div class="game-container">
         <div id="frame_1" class="frame active"></div>
         <div id="frame_2" class="frame active"></div>
         <div id="frame_3" class="frame active"></div>
-        <div id="rope"    class="frame active"></div>
+        <div id="rope" class="frame active"></div>
         <div id="man" class="active">
             <div id="head">
                 <div class="eye"></div>
@@ -26,6 +28,13 @@
 </div>
 
 <style lang="scss">
+.text-center {
+    display: flex;
+    justify-content: space-between;
+    .left {
+        display: flex;
+        flex-grow: 1;
+    }
     .game-container {
         display: flex;
         margin: auto;
@@ -151,4 +160,5 @@
             }
         }
     }
+}
 </style>

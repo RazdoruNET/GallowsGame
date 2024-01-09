@@ -4,4 +4,150 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome to Gallows Game</h1>
+    <hr>
+    <div class="game-container">
+        <div id="frame_1" class="frame active"></div>
+        <div id="frame_2" class="frame active"></div>
+        <div id="frame_3" class="frame active"></div>
+        <div id="rope"    class="frame active"></div>
+        <div id="man" class="active">
+            <div id="head">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+            <div id="body" class="frame"></div>
+            <div id="limb_1" class="limb"></div>
+            <div id="limb_2" class="limb"></div>
+            <div id="limb_3" class="limb"></div>
+            <div id="limb_4" class="limb"></div>
+        </div>
+        <div id="stand" class="active"></div>
+    </div>
 </div>
+
+<style lang="scss">
+    .game-container {
+        position: relative;
+        display: flex;
+        height: 600px;
+        width: 350px;
+        .frame.active {
+            background: #000000;
+        }
+        .frame {
+            background: #6c757d;
+            position: absolute;
+        }
+        #frame_1 {
+            top: 20px;
+            left: 95px;
+            width: 200px;
+            height: 30px;
+        }
+        #frame_2 {
+            top: 20px;
+            left: 285px;
+            width: 50px;
+            height: 500px;
+        }
+        #frame_3 {
+            top: 525px;
+            left: 15px;
+            width: 320px;
+            height: 30px;
+        }
+        #rope {
+            top: 50px;
+            left: 95px;
+            width: 10px;
+            height: 100px;
+        }
+        #stand {
+            background: #6c757d;
+            position: absolute;
+            width: 95px;
+            height: 70px;
+            top: 455px;
+            left: 50px;
+        }
+        #stand.active {
+            background: #000000;
+            position: absolute;
+            width: 95px;
+            height: 70px;
+            top: 455px;
+            left: 50px;
+        }
+        #stand.hiden {
+            display: none;
+            opacity: 0;
+        }
+        #man {
+            #head {
+                display: flex;
+                position: absolute;
+                top: 150px;
+                left: 50px;
+                background: #ffffff;
+                border: 10px solid #6c757d;
+                border-radius: 28px;
+                width: 100px;
+                height: 100px;
+                .eye {
+                    background: #6c757d;
+                    margin: auto;
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+            #body {
+                top: 255px;
+                left: 74px;
+                width: 50px;
+                height: 114px;
+            }
+            .limb {
+                background: #6c757d;
+                position: absolute;
+                width: 20px;
+                height: 80px;
+            }
+            #limb_1 {
+                top: 255px;
+                left: 50px;
+                border-top-left-radius: 10px;
+            }
+            #limb_2 {
+                top: 255px;
+                left: 128px;
+                border-top-right-radius: 10px;
+            }
+            #limb_3 {
+                top: 372px;
+                left: 74px;
+            }
+            #limb_4 {
+                top: 372px;
+                left: 105px;
+            }
+        }
+        #man.active {
+            #head {
+                background: #e6dbb9;
+                border: 10px solid #000000;
+                .eye {
+                    background: #000000;
+                    margin: auto;
+                    width: 10px;
+                    height: 3px;
+                }
+            }
+            .limb {
+                background: #000000;
+            }
+            .frame {
+                background: #000000;
+            }
+        }
+    }
+</style>

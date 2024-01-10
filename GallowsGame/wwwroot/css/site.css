@@ -131,13 +131,13 @@ body {
         top: 255px;
         left: 74px;
         width: 50px;
-        height: 114px;
+        height: 90px;
       }
       .limb {
         background: #6c757d;
         position: absolute;
         width: 20px;
-        height: 80px;
+        height: 105px;
       }
       #limb_1 {
         top: 255px;
@@ -150,11 +150,11 @@ body {
         border-top-right-radius: 10px;
       }
       #limb_3 {
-        top: 372px;
+        top: 348px;
         left: 74px;
       }
       #limb_4 {
-        top: 372px;
+        top: 348px;
         left: 105px;
       }
     }

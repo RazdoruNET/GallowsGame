@@ -1,6 +1,6 @@
 namespace GallowsGame.Models.Entity;
 
-public class Game : EntityBase
+public class Game : BaseEntity
 {
     
 }

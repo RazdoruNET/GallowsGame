@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace GallowsGame.Entity;
+namespace GallowsGame.Models.Entity;
 
 public class AppDbContext : DbContext
 {

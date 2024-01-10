@@ -1,6 +1,6 @@
-namespace GallowsGame.Entity;
+namespace GallowsGame.Models.DTO;
 
-public class EntityBase
+public class DTOBase
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

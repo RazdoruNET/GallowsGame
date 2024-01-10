@@ -3,7 +3,7 @@ using GallowsGame.Models.Enum;
 
 namespace GallowsGame.Models.Entity;
 
-public class Answer : BaseEntity
+public class QuestionAnswer : BaseEntity
 {
     public TypeAnswerEnum TypeAnswer { get; set; }
     

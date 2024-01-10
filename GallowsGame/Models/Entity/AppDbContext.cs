@@ -6,6 +6,7 @@ public class AppDbContext : DbContext
 {
     public DbSet<Game> Games { get; set; }
     public DbSet<Question> Questions { get; set; }
+    public DbSet<QuestionAnswer> QuestionAnswers { get; set; }
     
     public AppDbContext() 
         : base()

@@ -25,3 +25,12 @@
         <p>Чуть позже здесь появится описание.</p>
     </div>
 </div>
+
+<script>
+    setInterval(()=> {
+        $('#head>.eye:first-child').toggleClass("active");
+        setTimeout(()=> {
+                $('#head>.eye:first-child').toggleClass("active");
+            }, 3000);
+    }, 10000);
+</script>

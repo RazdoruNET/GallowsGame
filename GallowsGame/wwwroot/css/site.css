@@ -153,6 +153,10 @@ body {
           width: 10px;
           height: 3px;
         }
+        .eye.active {
+          transition: 3s;
+          height: 8px;
+        }
       }
       .limb {
         background: #000000;

@@ -1,5 +1,5 @@
-@using GallowsGame.Models.Enum
-@model GallowsGame.Models.Enum.BadBoyStatusEnum
+@using BLL.Models.Enum
+@model BLL.Models.Enum.BadBoyStatusEnum
 <div class="game-container">
     <div id="frame_1" class="frame @Html.Raw((Model == BadBoyStatusEnum.Init)? "active" : (Model == BadBoyStatusEnum.Death)? "active" : "")"></div>
     <div id="frame_2" class="frame @Html.Raw((Model == BadBoyStatusEnum.Init)? "active" : (Model == BadBoyStatusEnum.Death)? "active" : "")"></div>

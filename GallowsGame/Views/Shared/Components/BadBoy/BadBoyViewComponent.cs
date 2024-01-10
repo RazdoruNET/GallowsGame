@@ -1,4 +1,4 @@
-using GallowsGame.Models.Enum;
+using BLL.Models.Enum;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GallowsGame.Views.Shared.Components.BadBoy;

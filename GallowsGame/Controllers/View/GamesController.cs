@@ -10,8 +10,18 @@ public class GamesController : Controller
     {
         _logger = logger;
     }
-
+    
+    public IActionResult Get(Guid? id)
+    {
+        return View();
+    }
+    
     public IActionResult List()
+    {
+        return View();
+    }
+    
+    public IActionResult Create()
     {
         return View();
     }

@@ -4,6 +4,7 @@ using GallowsGame.Services;
 using Microsoft.OpenApi.Models;
 using AutoMapper;
 using GallowsGame.Models.Mapper;
+using GallowsGame.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddAutoMapper(typeof(DTOMapperProfile));
 builder.Services.AddDbContext<AppDbContext>();
+
+builder.Services.AddScoped<IBaseRepositorie<Game>, BaseRepositorie<Game>>();
+builder.Services.AddScoped<IBaseRepositorie<Question>, BaseRepositorie<Question>>();
+builder.Services.AddScoped<IBaseRepositorie<QuestionAnswer>, BaseRepositorie<QuestionAnswer>>();
+builder.Services.AddScoped<IBaseRepositorie<User>, BaseRepositorie<User>>();
 
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IUserService, UserService>();

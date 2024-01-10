@@ -10,15 +10,24 @@ namespace GallowsGame.Services;
 public class GameService : IGameService
 {
     private readonly IMapper _mapper;
-    public GameService(IMapper mapper)
+    private readonly IBaseRepositorie<Game> _repositorie;
+    public GameService(IMapper mapper, IBaseRepositorie<Game> repositorie)
     {
         _mapper = mapper;
+        _repositorie = repositorie;
     }
     
     public async Task<GameDto> GetGame(Guid? id)
     {
-        var result = new object();
+        var result = await _repositorie.GetById(id.Value);
 
         return _mapper.Map<GameDto>(result);
+    }
+    
+    public async Task<IEnumerable<GameDto>> GetAllGame()
+    {
+        var result = await _repositorie.GetAll();
+        
+        return _mapper.Map<IEnumerable<GameDto>>(result);
     }
 }

@@ -1,6 +1,7 @@
 namespace GallowsGame.Interfaces;
 
-public class IBaseRepositorie
+public interface IBaseRepositorie<TEntity>
 {
-    
+    Task<TEntity> GetById(Guid id);
+    Task<IEnumerable<TEntity>> GetAll();
 }

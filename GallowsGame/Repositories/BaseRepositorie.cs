@@ -16,7 +16,7 @@ public class BaseRepositorie<TEntity> : IBaseRepositorie<TEntity> where TEntity 
     
     public async Task<TEntity> GetById(Guid id)
     {
-        return await _dbSet.FindAsync(id);
+        return await _dbSet.FindAsync(id.ToString());
     }
     
     public async Task<IEnumerable<TEntity>> GetAll()

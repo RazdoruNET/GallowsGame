@@ -4,7 +4,7 @@ namespace GallowsGame.Models.Entity;
 
 public class Question : BaseEntity
 {
-    public Guid GameId { get; set; }
+    public long GameId { get; set; }
 
     [ForeignKey("GameId")]
     public Game Game { get; set; }

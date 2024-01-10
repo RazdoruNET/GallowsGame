@@ -20,7 +20,7 @@ public class GameController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpGet]
-    public async Task<GameDto> Get(Guid? id) => await _game.GetGame(id);
+    public async Task<GameDto> Get(Guid id) => await _game.GetGame(id);
 
     /// <summary>
     /// Post game

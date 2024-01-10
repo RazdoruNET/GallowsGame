@@ -9,21 +9,16 @@ namespace GallowsGame.Services;
 
 public class GameService : IGameService
 {
-    private readonly AppDbContext _appDbContext;
     private readonly IMapper _mapper;
-    public GameService(AppDbContext appDbContext, IMapper mapper)
+    public GameService(IMapper mapper)
     {
-        _appDbContext = appDbContext;
         _mapper = mapper;
     }
     
     public async Task<GameDto> GetGame(Guid? id)
     {
-        return _mapper.Map<GameDto>(
-            await _appDbContext.Games
-                .AsNoTracking()
-                .Where(x => (id.HasValue) ? x.Id == id.Value : true)
-                .FirstOrDefaultAsync()
-            );
+        var result = new object();
+
+        return _mapper.Map<GameDto>(result);
     }
 }

@@ -8,8 +8,12 @@
     @await Component.InvokeAsync("BadBoy", new { active = BadBoyStatusEnum.Init })
 
     <div class="content_wraper">
-        <h1 class="display-">WELCOME TO <b>GALLOWS GAME</b></h1>
+        <h1 class="display-">
+            WELCOME TO <b>GALLOWS GAME</b> <hr>
+            <a class="btn btn-outline-dark" asp-area="" asp-controller="Games" asp-action="Get">Начать случайную игру</a>
+        </h1>
     </div>
+    
 </div>
 
 <script>

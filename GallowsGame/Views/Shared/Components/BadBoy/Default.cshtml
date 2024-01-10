@@ -1,11 +1,11 @@
-@model bool
-
+@using GallowsGame.Models.Enum
+@model GallowsGame.Models.Enum.BadBoyStatusEnum
 <div class="game-container">
-    <div id="frame_1" class="frame @Html.Raw( (Model)? "active" : "active" )"></div>
-    <div id="frame_2" class="frame @Html.Raw( (Model)? "active" : "active" )"></div>
-    <div id="frame_3" class="frame @Html.Raw( (Model)? "active" : "active" )"></div>
-    <div id="rope" class="frame @Html.Raw( (Model)? "active" : "active" )"></div>
-    <div id="man" class="@Html.Raw( (Model)? "active" : "" )">
+    <div id="frame_1" class="frame @Html.Raw((Model == BadBoyStatusEnum.Init)? "active" : (Model == BadBoyStatusEnum.Death)? "active" : "")"></div>
+    <div id="frame_2" class="frame @Html.Raw((Model == BadBoyStatusEnum.Init)? "active" : (Model == BadBoyStatusEnum.Death)? "active" : "")"></div>
+    <div id="frame_3" class="frame @Html.Raw((Model == BadBoyStatusEnum.Init)? "active" : (Model == BadBoyStatusEnum.Death)? "active" : "")"></div>
+    <div id="rope" class="frame @Html.Raw((Model == BadBoyStatusEnum.Init)? "active" : (Model == BadBoyStatusEnum.Death)? "active" : "")"></div>
+    <div id="man" class="@Html.Raw((Model == BadBoyStatusEnum.Init)? "" : (Model == BadBoyStatusEnum.Death)? "active" : "")">
         <div id="head">
             <div class="eye"></div>
             <div class="eye"></div>
@@ -16,5 +16,5 @@
         <div id="limb_3" class="limb"></div>
         <div id="limb_4" class="limb"></div>
     </div>
-    <div id="stand" class="@Html.Raw( (Model)? "hiden" : "active" )"></div>
+    <div id="stand" class="@Html.Raw((Model == BadBoyStatusEnum.Init)? "active" : (Model == BadBoyStatusEnum.Death)? "hiden" : "")"></div>
 </div>

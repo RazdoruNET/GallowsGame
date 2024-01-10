@@ -1,10 +1,11 @@
-﻿@{
+﻿@using GallowsGame.Models.Enum
+@{
     ViewData["Title"] = "Помощь близко";
 }
 <br>
 <div class="text-center">
     
-    @await Component.InvokeAsync("BadBoy", new { active = true })
+    @await Component.InvokeAsync("BadBoy", new { active = BadBoyStatusEnum.Death })
     
     <div class="content_wraper">
         <p>Чуть позже здесь появится описание.</p>

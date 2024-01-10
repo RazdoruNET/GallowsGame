@@ -1,11 +1,12 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using GallowsGame.Models.Enum
 @{
     ViewData["Title"] = "Gallows Game";
 }
 <br>
 <div class="text-center">
     
-    @await Component.InvokeAsync("BadBoy", new { active = false })
+    @await Component.InvokeAsync("BadBoy", new { active = BadBoyStatusEnum.Init })
 
     <div class="content_wraper">
         <h1 class="display-">WELCOME TO <b>GALLOWS GAME</b></h1>

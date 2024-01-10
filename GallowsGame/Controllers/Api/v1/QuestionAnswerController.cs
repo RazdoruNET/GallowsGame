@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GallowsGame.Controllers.Api.v1;
 
 [ApiController]
-[Route("Question/{Id}/Answer")]
+[Route("Question/Answer")]
 public class QuestionAnswerController : Controller
 {
     public QuestionAnswerController()
@@ -17,26 +17,28 @@ public class QuestionAnswerController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpGet]
-    public async Task<QuestionAnswerDTO> Get() => new QuestionAnswerDTO();
+    [Route("{id}")]
+    public async Task<QuestionAnswerDTO> Get(long id) => new QuestionAnswerDTO();
    
     /// <summary>
     /// Post question
     /// </summary>
     /// <returns></returns>
     [HttpPost]
-    public async Task<QuestionAnswerDTO> Post() => new QuestionAnswerDTO();
+    public async Task<QuestionAnswerDTO> Post(QuestionAnswerDTO data) => new QuestionAnswerDTO();
     
     /// <summary>
     /// Put question
     /// </summary>
     /// <returns></returns>
     [HttpPut]
-    public async Task<QuestionAnswerDTO> Put() => new QuestionAnswerDTO();
+    public async Task<QuestionAnswerDTO> Put(QuestionAnswerDTO data) => new QuestionAnswerDTO();
     
     /// <summary>
     /// Delete question
     /// </summary>
     /// <returns></returns>
     [HttpDelete]
-    public async Task<bool> Delete() => true;
+    [Route("/Question/Answer/{id}")]
+    public async Task<bool> Delete(long id) => true;
 }

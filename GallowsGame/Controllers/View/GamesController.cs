@@ -11,18 +11,10 @@ public class GamesController : Controller
         _logger = logger;
     }
     
-    public IActionResult Get(Guid? id)
-    {
-        return View();
-    }
+    public IActionResult Get(Guid? id) => View();
     
-    public IActionResult List()
-    {
-        return View();
-    }
+    public IActionResult List() => View();
     
-    public IActionResult Create()
-    {
-        return View();
-    }
+    public IActionResult Create() => View();
+    
 }

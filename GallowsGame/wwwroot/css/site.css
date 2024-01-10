@@ -35,11 +35,15 @@ body {
 .text-center {
   display: flex;
   justify-content: space-between;
-  .left {
+  .content_wraper {
     display: flex;
     flex-grow: 1;
     h1 {
+      color: #6c757d;
       margin: auto;
+      b {
+        color: #000000;
+      }
     }
     p {
       margin: auto;
@@ -167,7 +171,7 @@ body {
           height: 3px;
         }
         .eye.active {
-          transition: 3s;
+          transition: 2s;
           height: 8px;
         }
       }

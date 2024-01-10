@@ -1,27 +1,13 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
     ViewData["Title"] = "Gallows Game";
 }
 <br>
 <div class="text-center">
-    <div class="game-container">
-        <div id="frame_1" class="frame active"></div>
-        <div id="frame_2" class="frame active"></div>
-        <div id="frame_3" class="frame active"></div>
-        <div id="rope" class="frame active"></div>
-        <div id="man" class="">
-            <div id="head">
-                <div class="eye"></div>
-                <div class="eye"></div>
-            </div>
-            <div id="body" class="frame"></div>
-            <div id="limb_1" class="limb"></div>
-            <div id="limb_2" class="limb"></div>
-            <div id="limb_3" class="limb"></div>
-            <div id="limb_4" class="limb"></div>
-        </div>
-        <div id="stand" class="active"></div>
-    </div>
-    <div class="left">
+    
+    @await Component.InvokeAsync("BadBoy", new { active = false })
+
+    <div class="content_wraper">
         <h1 class="display-">WELCOME TO <b>GALLOWS GAME</b></h1>
     </div>
 </div>

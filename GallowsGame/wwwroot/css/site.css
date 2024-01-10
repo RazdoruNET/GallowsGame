@@ -108,6 +108,9 @@ body {
           width: 10px;
           height: 10px;
         }
+        .eye.active {
+          height: 3px;
+        }
       }
       #body {
         top: 255px;

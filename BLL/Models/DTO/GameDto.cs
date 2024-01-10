@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace BLL.Models.DTO;
 
 public class GameDto : BaseDTO

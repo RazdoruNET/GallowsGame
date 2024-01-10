@@ -1,4 +1,4 @@
-namespace GallowsGame.Interfaces;
+namespace Data.Interfaces;
 
 public interface IBaseRepositorie<TEntity>
 {

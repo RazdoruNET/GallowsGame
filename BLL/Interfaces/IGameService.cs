@@ -1,6 +1,6 @@
-using GallowsGame.Models.DTO;
+using BLL.Models.DTO;
 
-namespace GallowsGame.Interfaces;
+namespace BLL.Interfaces;
 
 public interface IGameService
 {

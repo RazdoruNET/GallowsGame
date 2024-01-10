@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GallowsGame.Models.Entity;
+namespace Data.Models.Entity;
 
 public class Question : BaseEntity
 {

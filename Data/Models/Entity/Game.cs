@@ -1,4 +1,4 @@
-namespace GallowsGame.Models.Entity;
+namespace Data.Models.Entity;
 
 public class Game : BaseEntity
 {

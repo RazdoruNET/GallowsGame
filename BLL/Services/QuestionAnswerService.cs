@@ -1,4 +1,4 @@
-using GallowsGame.Interfaces;
+using BLL.Interfaces;
 
 namespace GallowsGame.Services;
 

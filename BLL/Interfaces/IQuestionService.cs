@@ -1,4 +1,4 @@
-namespace GallowsGame.Interfaces;
+namespace BLL.Interfaces;
 
 public interface IQuestionService
 {

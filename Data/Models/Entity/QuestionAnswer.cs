@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using GallowsGame.Models.Enum;
 
-namespace GallowsGame.Models.Entity;
+namespace Data.Models.Entity;
 
 public class QuestionAnswer : BaseEntity
 {

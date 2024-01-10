@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
-namespace GallowsGame.Models.Entity;
+namespace Data.Models.Entity;
 
 public class AppDbContext : DbContext
 {

@@ -1,5 +1,5 @@
 using AutoMapper;
-using GallowsGame.Models.DTO;
+using BLL.Models.DTO;
 using Data.Models.Entity;
 
 namespace GallowsGame.Models.Mapper;

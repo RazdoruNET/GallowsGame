@@ -1,5 +1,4 @@
-using System.Text.Json;
-using GallowsGame.Models.DTO;
+using BLL.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GallowsGame.Controllers.Api.v1;

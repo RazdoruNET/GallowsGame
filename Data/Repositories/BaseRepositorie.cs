@@ -1,8 +1,8 @@
-using GallowsGame.Interfaces;
-using GallowsGame.Models.Entity;
+using Data.Interfaces;
+using Data.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace GallowsGame.Repositories;
+namespace Data.Repositories;
 
 public class BaseRepositorie<TEntity> : IBaseRepositorie<TEntity> where TEntity : class
 {

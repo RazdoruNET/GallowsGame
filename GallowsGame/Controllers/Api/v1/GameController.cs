@@ -1,5 +1,5 @@
-using GallowsGame.Interfaces;
-using GallowsGame.Models.DTO;
+using BLL.Interfaces;
+using BLL.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GallowsGame.Controllers.Api.v1;

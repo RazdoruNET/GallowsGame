@@ -1,11 +1,11 @@
-using GallowsGame.Interfaces;
-using GallowsGame.Models.DTO;
-using GallowsGame.Models.Entity;
-using Microsoft.EntityFrameworkCore;
+using Data.Models.Entity;
 using AutoMapper;
+using BLL.Interfaces;
+using BLL.Models.DTO;
+using Data.Interfaces;
 
 
-namespace GallowsGame.Services;
+namespace BLL.Services;
 
 public class GameService : IGameService
 {

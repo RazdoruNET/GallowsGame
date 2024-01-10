@@ -1,10 +1,11 @@
-using GallowsGame.Interfaces;
-using GallowsGame.Models.Entity;
+using Data.Interfaces;
+using BLL.Interfaces;
+using BLL.Services;
+using Data.Models.Entity;
 using GallowsGame.Services;
 using Microsoft.OpenApi.Models;
-using AutoMapper;
 using GallowsGame.Models.Mapper;
-using GallowsGame.Repositories;
+using Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

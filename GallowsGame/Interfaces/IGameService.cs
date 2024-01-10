@@ -4,5 +4,5 @@ namespace GallowsGame.Interfaces;
 
 public interface IGameService
 {
-    Task<GameDto> GetGame(Guid? id);
+     Task<GameDto> GetGame(Guid? id);
 }

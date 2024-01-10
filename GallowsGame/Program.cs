@@ -2,12 +2,15 @@ using GallowsGame.Interfaces;
 using GallowsGame.Models.Entity;
 using GallowsGame.Services;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
+using GallowsGame.Models.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAutoMapper(typeof(DTOMapperProfile));
 builder.Services.AddDbContext<AppDbContext>();
 
 builder.Services.AddScoped<IGameService, GameService>();
@@ -20,6 +23,7 @@ builder.Services.AddSwaggerGen(options => {
 });
 
 var app = builder.Build();
+
 
 app.UseExceptionHandler("/Home/Error");
 app.UseSwagger();

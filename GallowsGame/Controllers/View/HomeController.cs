@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using GallowsGame.Models;
 
-namespace GallowsGame.Controllers;
+namespace GallowsGame.Controllers.View;
 
 public class HomeController : Controller
 {

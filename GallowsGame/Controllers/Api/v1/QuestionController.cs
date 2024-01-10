@@ -2,29 +2,29 @@ using System.Text.Json;
 using GallowsGame.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GallowsGame.Controllers;
+namespace GallowsGame.Controllers.Api.v1;
 
 [ApiController]
 [Route("[controller]")]
-public class GameController : Controller
+public class QuestionController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<QuestionController> _logger;
 
-    public GameController(ILogger<HomeController> logger)
+    public QuestionController(ILogger<QuestionController> logger)
     {
         _logger = logger;
     }
     
     /// <summary>
-    /// Get game
+    /// Get question
     /// </summary>
     /// <returns></returns>
     [HttpGet]
-    public async Task<GameDTO> Get()
+    public async Task<QuestionDTO> Get()
     {
         try
         {
-            return new GameDTO();
+            return new QuestionDTO();
         }
         catch (Exception e)
         {
@@ -34,15 +34,15 @@ public class GameController : Controller
     }
 
     /// <summary>
-    /// Post game
+    /// Post question
     /// </summary>
     /// <returns></returns>
     [HttpPost]
-    public async Task<GameDTO> Post()
+    public async Task<QuestionDTO> Post()
     {
         try
         {
-            return new GameDTO();
+            return new QuestionDTO();
         }
         catch (Exception e)
         {
@@ -52,15 +52,15 @@ public class GameController : Controller
     }
     
     /// <summary>
-    /// Put game
+    /// Put question
     /// </summary>
     /// <returns></returns>
     [HttpPut]
-    public async Task<GameDTO> Put()
+    public async Task<QuestionDTO> Put()
     {
         try
         {
-            return new GameDTO();
+            return new QuestionDTO();
         }
         catch (Exception e)
         {
@@ -70,7 +70,7 @@ public class GameController : Controller
     }
     
     /// <summary>
-    /// Delete game
+    /// Delete question
     /// </summary>
     /// <returns></returns>
     [HttpDelete]

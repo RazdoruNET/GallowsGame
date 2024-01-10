@@ -20,11 +20,11 @@ public class QuestionController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpGet]
-    public async Task<QuestionBaseDto> Get()
+    public async Task<QuestionDTO> Get()
     {
         try
         {
-            return new QuestionBaseDto();
+            return new QuestionDTO();
         }
         catch (Exception e)
         {
@@ -38,11 +38,11 @@ public class QuestionController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpPost]
-    public async Task<QuestionBaseDto> Post()
+    public async Task<QuestionDTO> Post()
     {
         try
         {
-            return new QuestionBaseDto();
+            return new QuestionDTO();
         }
         catch (Exception e)
         {
@@ -56,11 +56,11 @@ public class QuestionController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpPut]
-    public async Task<QuestionBaseDto> Put()
+    public async Task<QuestionDTO> Put()
     {
         try
         {
-            return new QuestionBaseDto();
+            return new QuestionDTO();
         }
         catch (Exception e)
         {

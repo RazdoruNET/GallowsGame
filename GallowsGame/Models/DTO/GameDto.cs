@@ -1,6 +1,6 @@
 namespace GallowsGame.Models.DTO;
 
-public class QuestionBaseDto : BaseDTO
+public class GameDto : BaseDTO
 {
     
 }

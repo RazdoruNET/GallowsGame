@@ -20,11 +20,11 @@ public class GameController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpGet]
-    public async Task<GameBaseDto> Get()
+    public async Task<GameDto> Get()
     {
         try
         {
-            return new GameBaseDto();
+            return new GameDto();
         }
         catch (Exception e)
         {
@@ -38,11 +38,11 @@ public class GameController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpPost]
-    public async Task<GameBaseDto> Post()
+    public async Task<GameDto> Post()
     {
         try
         {
-            return new GameBaseDto();
+            return new GameDto();
         }
         catch (Exception e)
         {
@@ -56,11 +56,11 @@ public class GameController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpPut]
-    public async Task<GameBaseDto> Put()
+    public async Task<GameDto> Put()
     {
         try
         {
-            return new GameBaseDto();
+            return new GameDto();
         }
         catch (Exception e)
         {

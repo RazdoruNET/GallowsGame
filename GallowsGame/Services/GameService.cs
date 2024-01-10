@@ -17,9 +17,9 @@ public class GameService : IGameService
         _repositorie = repositorie;
     }
     
-    public async Task<GameDto> GetGame(Guid? id)
+    public async Task<GameDto> GetGame(long id)
     {
-        var result = await _repositorie.GetById(id.Value);
+        var result = await _repositorie.GetById(id);
 
         return _mapper.Map<GameDto>(result);
     }

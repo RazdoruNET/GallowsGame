@@ -27,6 +27,7 @@ public class GameController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpGet]
+    [Route("All")]
     public async Task<IEnumerable<GameDto>> GetAll() => await _game.GetAllGame();
 
     /// <summary>

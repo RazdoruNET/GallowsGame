@@ -69,7 +69,7 @@ body {
       top: 50px;
       left: 95px;
       width: 10px;
-      height: 100px;
+      height: 110px;
     }
     #stand {
       background: #6c757d;
@@ -144,6 +144,8 @@ body {
       }
     }
     #man.active {
+      position: relative;
+      top: 4px;
       #head {
         background: #e6dbb9;
         border: 10px solid #000000;

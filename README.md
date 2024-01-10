@@ -1,2 +1,4 @@
 # GALLOWS GAME
-## УЧЕБНО ПОСОБИЕ К КНИГЕ C# Fullstack
+## :call_me_hand: УЧЕБНОЕ ПОСОБИЕ К КНИГЕ C# Fullstack
+
+

@@ -1,1 +1,22 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/.idea.GallowsGame.iml
+/projectSettingsUpdater.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+/GallowsGame/bin/
+/GallowsGame/obj/
+/Data/obj/
+/Data/bin/
+/BLL/bin/
 /BLL/obj/
+/.idea/.idea.GallowsGame/.idea/vcs.xml
+/.idea/.idea.GallowsGame/.idea/dataSources.xml
+/.idea/.idea.GallowsGame/.idea/watcherTasks.xml

@@ -1,4 +1,4 @@
-using System.Text.Json;
+using GallowsGame.Interfaces;
 using GallowsGame.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +8,11 @@ namespace GallowsGame.Controllers.Api.v1;
 [Route("[controller]")]
 public class GameController : Controller
 {
-    private readonly ILogger<GameController> _logger;
+    private readonly IGameService _game;
 
-    public GameController(ILogger<GameController> logger)
+    public GameController(IGameService game)
     {
-        _logger = logger;
+        _game = game;
     }
     
     /// <summary>
@@ -20,70 +20,26 @@ public class GameController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpGet]
-    public async Task<GameDto> Get()
-    {
-        try
-        {
-            return new GameDto();
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(JsonSerializer.Serialize<Exception>(e));
-            throw;
-        }
-    }
+    public async Task<GameDto> Get(Guid? id) => await _game.GetGame(id);
 
     /// <summary>
     /// Post game
     /// </summary>
     /// <returns></returns>
     [HttpPost]
-    public async Task<GameDto> Post()
-    {
-        try
-        {
-            return new GameDto();
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(JsonSerializer.Serialize<Exception>(e));
-            throw;
-        }
-    }
+    public async Task<GameDto> Post() =>  new GameDto();
     
     /// <summary>
     /// Put game
     /// </summary>
     /// <returns></returns>
     [HttpPut]
-    public async Task<GameDto> Put()
-    {
-        try
-        {
-            return new GameDto();
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(JsonSerializer.Serialize<Exception>(e));
-            throw;
-        }
-    }
+    public async Task<GameDto> Put() => new GameDto();
     
     /// <summary>
     /// Delete game
     /// </summary>
     /// <returns></returns>
     [HttpDelete]
-    public async Task<bool> Delete()
-    {
-        try
-        {
-            return true;
-        }
-        catch (Exception e)
-        {
-            _logger.LogError(JsonSerializer.Serialize<Exception>(e));
-            throw;
-        }
-    }
+    public async Task<bool> Delete() => true;
 }

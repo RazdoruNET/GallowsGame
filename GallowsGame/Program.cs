@@ -24,7 +24,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.UseSwaggerUI(options => {
     options.SwaggerEndpoint("/swagger/v1/swagger.json",
-        "SportsStore API");
+        "GallowsGame API");
 });
 
 app.Run();

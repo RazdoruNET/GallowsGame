@@ -23,4 +23,12 @@ public class BaseRepositorie<TEntity> : IBaseRepositorie<TEntity> where TEntity 
     {
         return await _dbSet.AsNoTracking().ToListAsync();
     }
+
+    public async Task<TEntity> Add(TEntity model)
+    { 
+        await _dbSet.AddAsync(model);
+        await _db.SaveChangesAsync();
+
+        return model;
+    }
 }

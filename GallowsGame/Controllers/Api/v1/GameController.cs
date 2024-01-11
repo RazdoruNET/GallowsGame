@@ -1,5 +1,7 @@
+using AutoMapper;
 using BLL.Interfaces;
 using BLL.Models.DTO;
+using GallowsGame.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GallowsGame.Controllers.Api.v1;
@@ -9,10 +11,12 @@ namespace GallowsGame.Controllers.Api.v1;
 public class GameController : Controller
 {
     private readonly IGameService _game;
+    private readonly IMapper _mapper;
 
-    public GameController(IGameService game)
+    public GameController(IGameService game, IMapper mapper)
     {
         _game = game;
+        _mapper = mapper;
     }
     
     /// <summary>
@@ -35,7 +39,7 @@ public class GameController : Controller
     /// </summary>
     /// <returns></returns>
     [HttpPost]
-    public async Task<GameDto> Post() =>  new GameDto();
+    public async Task<GameDto> Post([FromForm] GamePostRequest request) => await _game.CreateGame(_mapper.Map<GameDto>(request));
     
     /// <summary>
     /// Put game

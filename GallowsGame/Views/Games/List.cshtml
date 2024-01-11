@@ -15,28 +15,28 @@
             <a class="btn btn-primary" asp-area="" asp-controller="Games" asp-action="Create">Создать виселицу</a>
         </div>
         <hr>
-        <table class="table table-bordered">
+        <table id="data_table" class="table table-bordered">
             <tr>
                 <th class="col-1">ID</th>
                 <th class="col-9">Название</th>
                 <th class="col-2">Действия</th>
             </tr>
             <tr>
-                <td>d</td>
-                <td>d</td>
-                <td>d</td>
-            </tr>
-            <tr>
-                <td>d</td>
-                <td>d</td>
-                <td>d</td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
         </table>
     </div>
 </div>
 
 <script>
-    
+    fetch('/Game/All')
+      .then(response =>  response.json())
+      .then(data => {
+        console.log(data);
+      });
+
     
     setInterval(()=> {
         $('.eye').toggleClass("active");

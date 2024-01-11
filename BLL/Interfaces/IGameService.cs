@@ -9,4 +9,6 @@ public interface IGameService
      Task<GameDto> GetGame(long id);
 
      Task<IEnumerable<GameDto>> GetAllGame();
+     
+     Task<GameDto> CreateGame(GameDto model);
 }

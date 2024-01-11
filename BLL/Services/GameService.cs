@@ -32,4 +32,12 @@ public class GameService : IGameService
         
         return _mapper.Map<IEnumerable<GameDto>>(result);
     }
+
+    public async Task<GameDto> CreateGame(GameDto model)
+    {
+        var entity_model = _mapper.Map<Game>(model);
+        var result = await _repositorie.Add(entity_model);
+        
+        return _mapper.Map<GameDto>(result);
+    }
 }

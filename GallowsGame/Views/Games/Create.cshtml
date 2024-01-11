@@ -8,7 +8,12 @@
     @await Component.InvokeAsync("BadBoy", new { active = BadBoyStatusEnum.Death })
 
     <div class="content_wraper">
-        <p>Чуть позже здесь появится выбор игр.</p>
+        <form action="/Game" method="POST">
+            <hr>
+            <p><input type="text" class="form-control" name="Name" value="" placeholder="Введите название новой игры"></p>
+            <hr>
+            <p><button type="submit" class="btn btn-success">Создать</button></p>
+        </form>
     </div>
 </div>
 

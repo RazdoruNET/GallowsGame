@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAutoMapper(typeof(ControllerMapperProfile));
 builder.Services.AddAutoMapper(typeof(DTOMapperProfile));
 builder.Services.AddDbContext<AppDbContext>();
 

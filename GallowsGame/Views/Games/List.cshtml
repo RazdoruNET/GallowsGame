@@ -21,11 +21,6 @@
                 <th class="col-9">Название</th>
                 <th class="col-2">Действия</th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
         </table>
     </div>
 </div>
@@ -35,6 +30,21 @@
       .then(response =>  response.json())
       .then(data => {
         console.log(data);
+        data.forEach(item => {
+            
+            let table = document.getElementById('data_table');
+            
+            let row = table.insertRow(-1);
+
+            let cell_id = row.insertCell(0);
+            let cell_name = row.insertCell(1);
+            let cell_control = row.insertCell(2);
+         
+            cell_id.appendChild(document.createTextNode(item['id']));
+            cell_name.appendChild(document.createTextNode(item['name']));
+            cell_control.appendChild(document.createTextNode('-'));
+        
+        });
       });
 
     

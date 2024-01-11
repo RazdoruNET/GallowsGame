@@ -8,16 +8,35 @@
     @await Component.InvokeAsync("BadBoy", new { active = BadBoyStatusEnum.Death })
 
     <div class="content_wraper">
-        <form action="/Game" method="POST">
+        <form id="add_form">
             <hr>
             <p><input type="text" class="form-control" name="Name" value="" placeholder="Введите название новой игры"></p>
             <hr>
-            <p><button type="submit" class="btn btn-success">Создать</button></p>
+            <p><button type="button" onclick="send_form('add_form')" class="btn btn-success">Создать</button></p>
         </form>
     </div>
 </div>
 
 <script>
+
+     function send_form(form_id) {
+         var form = $('#'+form_id);
+         var msg   = form.serialize();
+         $.ajax({
+             type: 'POST',
+             url: '../Game', 
+             data: msg,
+             success: function(data) {
+                console.log(data);
+                location.replace('/Games/List');
+             },
+             error:  function(){
+                 alert('Ошибка!');
+             }
+         });
+     
+     }
+    
     setInterval(()=> {
         $('.eye').toggleClass("active");
         setTimeout(()=> {

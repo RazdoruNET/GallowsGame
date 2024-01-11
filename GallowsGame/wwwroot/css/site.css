@@ -37,6 +37,7 @@ body {
   justify-content: space-between;
   .content_wraper {
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
     h1 {
       color: #6c757d;
@@ -47,6 +48,9 @@ body {
     }
     p {
       margin: auto;
+    }
+    .controls {
+      text-align: right;
     }
   }
   .game-container {

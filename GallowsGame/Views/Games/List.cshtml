@@ -8,11 +8,36 @@
     @await Component.InvokeAsync("BadBoy", new { active = BadBoyStatusEnum.Clear })
 
     <div class="content_wraper">
-       <p>Чуть позже здесь появится выбор игр.</p>
+        <hr>
+        <div class="controls">
+            <a class="btn btn-outline-dark" asp-area="" asp-controller="Games" asp-action="List">Обновить список</a>
+            <a class="btn btn-success" asp-area="" asp-controller="Games" asp-action="Get">Случайная игра</a>
+            <a class="btn btn-primary" asp-area="" asp-controller="Games" asp-action="Create">Создать виселицу</a>
+        </div>
+        <hr>
+        <table class="table table-bordered">
+            <tr>
+                <th class="col-1">ID</th>
+                <th class="col-9">Название</th>
+                <th class="col-2">Действия</th>
+            </tr>
+            <tr>
+                <td>d</td>
+                <td>d</td>
+                <td>d</td>
+            </tr>
+            <tr>
+                <td>d</td>
+                <td>d</td>
+                <td>d</td>
+            </tr>
+        </table>
     </div>
 </div>
 
 <script>
+    
+    
     setInterval(()=> {
         $('.eye').toggleClass("active");
         setTimeout(()=> {

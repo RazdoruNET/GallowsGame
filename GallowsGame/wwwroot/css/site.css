@@ -55,7 +55,7 @@ body {
   }
   .game-container {
     display: flex;
-    margin: auto;
+    margin: 0px auto;
     position: relative;
     height: 600px;
     width: 350px;

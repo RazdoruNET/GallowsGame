@@ -8,35 +8,70 @@
     @await Component.InvokeAsync("BadBoy", new { active = BadBoyStatusEnum.Death })
 
     <div class="content_wraper">
+              
+        <hr>
         <form id="add_form">
+            <div class="input-group p-3">
+                <p class="px-3">Название новой игры</p>
+                <input type="text" class="form-control" name="Name" value="" placeholder="Введите название новой игры">
+                <button type="button" onclick="send_form('add_form')" class="btn btn-success mx-3 w-25">Создать игру</button>
+            </div>
             <hr>
-            <p><input type="text" class="form-control" name="Name" value="" placeholder="Введите название новой игры"></p>
+                <button type="button" onclick="add_qto_form('add_form')" class="btn btn-primary w-100">Добавить вопрос</button>
             <hr>
-            <p><button type="button" onclick="send_form('add_form')" class="btn btn-success">Создать</button></p>
         </form>
+        <hr>
+
     </div>
 </div>
 
 <script>
 
-     function send_form(form_id) {
-         var form = $('#'+form_id);
-         var msg   = form.serialize();
-         $.ajax({
-             type: 'POST',
-             url: '../Game', 
-             data: msg,
-             success: function(data) {
-                console.log(data);
-                location.replace('/Games/List');
-             },
-             error:  function(){
-                 alert('Ошибка!');
-             }
-         });
+     function add_qto_form(form_id) {
+         
+             let form = document.getElementById(form_id);
+             let inputs = document.getElementsByClassName('question');
+             
+             let group = document.createElement('div');
+             
+             group.classList.add('input-group');
+             group.classList.add('p-3');
+             
+             let title = document.createElement('p');
+             
+             title.innerText = 'Вопрос - ' + ++inputs.length;
+             title.classList.add('px-3');
+             
+             let input = document.createElement('input');
+             
+             input.classList.add('form-control');
+             input.classList.add('question');
+             input.name = "Questions["+inputs.length+"][0]";
+             
+             group.appendChild(title);
+             group.appendChild(input);
+             
+             form.appendChild(group);
+         }
      
-     }
-    
+    function send_form(form_id) {
+             var form = $('#'+form_id);
+             var msg   = form.serialize();
+             $.ajax({
+                 type: 'POST',
+                 url: '../Game', 
+                 data: msg,
+                 success: function(data) {
+                    console.log(data);
+                    location.replace('/Games/List');
+                 },
+                 error:  function(){
+                     alert('Ошибка!');
+                 }
+             });
+         
+         }
+         
     setInterval(()=> {
         $('.eye').toggleClass("active");
         setTimeout(()=> {

@@ -45,7 +45,15 @@
          
             cell_id.appendChild(document.createTextNode(item['id']));
             cell_name.appendChild(document.createTextNode(item['name']));
-            cell_control.appendChild(document.createTextNode('-'));
+            
+            let a = document.createElement('a');
+                
+            a.href = "/Games/Get?id="+item['id'];
+            a.text = "Играть";
+            a.classList.add('btn');
+            a.classList.add('btn-primary');
+                
+            cell_control.appendChild(a);
         
         });
       });
@@ -57,4 +65,5 @@
                 $('.eye').toggleClass("active");
             }, 300);
     }, 5000);
+    
 </script>

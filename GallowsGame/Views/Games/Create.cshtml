@@ -69,8 +69,9 @@
              button_del.classList.add('btn');
              button_del.classList.add('btn-danger');
              button_del.onclick = function(){
-             
-                 return false;
+                group.remove();
+                children.remove();
+                return false;
              };
 
              let children = document.createElement('div');
@@ -136,7 +137,7 @@
         button.classList.add('btn');
         button.classList.add('btn-outline-danger');
         button.onclick = function(){
-            
+            group.remove();
             return false;
         };
         

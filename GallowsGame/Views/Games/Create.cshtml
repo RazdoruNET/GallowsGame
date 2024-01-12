@@ -81,6 +81,7 @@
 
              let children = document.createElement('div');
              
+             children.classList.add('children_'+index);
              children.classList.add('children');
              
              group.appendChild(title);
@@ -94,10 +95,12 @@
          
     function addAnswer(index) {
         
-        let inputs = document.getElementsByClassName('question');
+        let input_answers_length = document
+            .getElementsByClassName('children_'+index)
+            .item(0)
+            .children
+            .length;
         
-        let input_parrent = inputs.item(index);
-
         let group = document.createElement('div');
                   
         group.classList.add('input-group');
@@ -105,7 +108,7 @@
         
         let title = document.createElement('p');
         
-        title.innerText = 'Ответ - ' + ++inputs.length;
+        title.innerText = 'Ответ - ' + ++input_answers_length;
         title.classList.add('px-3');
         
         let input = document.createElement('input');
@@ -133,9 +136,9 @@
         group.appendChild(input);
         group.appendChild(button);
         
-        input_parrent.parentElement.nextElementSibling.appendChild(group);
-        
-        console.log(index);
+        document.getElementsByClassName('children_'+index)
+            .item(0)
+            .appendChild(group);
     }
      
     function send_form(form_id) {

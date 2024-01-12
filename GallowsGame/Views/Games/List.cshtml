@@ -5,7 +5,7 @@
 <br>
 <div class="text-center">
     
-    
+    @await Component.InvokeAsync("BadBoy", new { active = BadBoyStatusEnum.Clear })
 
     <div class="content_wraper">
         <hr>
@@ -24,7 +24,7 @@
         </table>
     </div>
     
-    @await Component.InvokeAsync("BadBoy", new { active = BadBoyStatusEnum.Clear })
+    
     
 </div>
 

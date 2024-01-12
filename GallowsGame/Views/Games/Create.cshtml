@@ -111,6 +111,23 @@
         input.classList.add('form-control');
         input.classList.add('answer');
         
+        let true_group = document.createElement('div');
+        
+        true_group.classList.add('true-group');
+        true_group.classList.add('p-2');
+                
+        let true_answer = document.createElement('input');
+                
+        true_answer.type = 'checkbox';
+        
+        let true_title = document.createElement('label');
+        
+        true_title.innerText = "Верный ответ";
+        true_title.classList.add('mx-3');
+        
+        true_group.appendChild(true_answer);
+        true_group.appendChild(true_title);
+        
         let button = document.createElement('button');
         
         button.type = 'button';
@@ -125,6 +142,7 @@
         
         group.appendChild(title);
         group.appendChild(input);
+        group.appendChild(true_group);
         group.appendChild(button);
         
         document.getElementsByClassName('children_'+index)

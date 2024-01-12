@@ -51,33 +51,27 @@
              
              let button = document.createElement('button');
              
-             button.id = 'button_add_q_'+index;
-             button.innerText = 'Добавить ответ';
-             
-             button.onclick = function(){
-                 addAnswer(index);
-                 return false;
-               };
-             
              button.type = 'button';
+             button.innerText = 'Добавить ответ';
              button.classList.add('mx-3');
              button.classList.add('btn');
              button.classList.add('btn-outline-dark');
+             button.onclick = function(){
+                addAnswer(index);
+                return false;
+             };
              
              let button_del = document.createElement('button');
-                      
-             button_del.id = 'button_add_q_'+index;
+
              button_del.innerText = 'Удалить вопрос';
-            
-             button_del.onclick = function(){
-               
-               return false;
-             };
-            
              button_del.type = 'button';
              button_del.classList.add('mx-3');
              button_del.classList.add('btn');
              button_del.classList.add('btn-danger');
+             button_del.onclick = function(){
+             
+                 return false;
+             };
 
              let children = document.createElement('div');
              
@@ -113,24 +107,21 @@
         
         let input = document.createElement('input');
         
+        input.name = "Answers["+index+"][0]";
         input.classList.add('form-control');
         input.classList.add('answer');
-        input.name = "Answers["+index+"][0]";
         
         let button = document.createElement('button');
         
-        button.id = 'button_add_q_'+index;
+        button.type = 'button';
         button.innerText = 'Удалить ответ';
-        
+        button.classList.add('mx-3');
+        button.classList.add('btn');
+        button.classList.add('btn-outline-danger');
         button.onclick = function(){
             
             return false;
         };
-        
-        button.type = 'button';
-        button.classList.add('mx-3');
-        button.classList.add('btn');
-        button.classList.add('btn-outline-danger');
         
         group.appendChild(title);
         group.appendChild(input);

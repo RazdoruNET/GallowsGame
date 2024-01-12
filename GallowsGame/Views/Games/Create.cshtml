@@ -14,10 +14,10 @@
             <div class="input-group p-3">
                 <p class="px-3">Название новой игры</p>
                 <input type="text" class="form-control" name="Name" value="" placeholder="Введите название новой игры">
-                <button type="button" onclick="send_form('add_form')" class="btn btn-success mx-3 w-25">Создать игру</button>
+                <button type="button" onclick="send_form()" class="btn btn-success mx-3 w-25">Создать игру</button>
             </div>
             <hr>
-                <button type="button" onclick="add_qto_form('add_form')" class="btn btn-primary w-100">Добавить вопрос</button>
+                <button type="button" onclick="add_qto_form()" class="btn btn-primary w-100">Добавить вопрос</button>
             <hr>
         </form>
         <hr>
@@ -27,9 +27,9 @@
 
 <script>
 
-     function add_qto_form(form_id) {
+     function add_qto_form() {
          
-             let form = document.getElementById(form_id);
+             let form = document.getElementById('add_form');
              let inputs = document.getElementsByClassName('question');
              let index = inputs.length;
              
@@ -132,12 +132,12 @@
             .appendChild(group);
     }
      
-    function send_form(form_id) {
-             var form = $('#'+form_id);
-             var msg   = form.serialize();
-             //var json = JSON.parse(msg);
-             console.log(msg);
+    function send_form() {
              
+         let form = document.getElementById('add_form');
+             
+         console.log(form);
+         
              //$.ajax({
              //    type: 'POST',
              //    url: '../Game', 

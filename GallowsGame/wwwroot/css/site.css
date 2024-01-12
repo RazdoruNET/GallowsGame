@@ -36,6 +36,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  .top-list {
+    display: flex;
+    flex-direction: row;
+  }
   .content_wraper {
     display: flex;
     flex-direction: column;

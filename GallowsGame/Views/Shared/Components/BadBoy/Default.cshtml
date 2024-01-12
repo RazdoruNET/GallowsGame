@@ -6,7 +6,7 @@
     <div id="frame_3" class="frame @Html.Raw((Model == BadBoyStatusEnum.Init)? "active" : (Model == BadBoyStatusEnum.Death)? "active" : "")"></div>
     <div id="rope" class="frame @Html.Raw((Model == BadBoyStatusEnum.Init)? "active" : (Model == BadBoyStatusEnum.Death)? "active" : "")"></div>
     <div id="man" class="@Html.Raw((Model == BadBoyStatusEnum.Init)? "" : (Model == BadBoyStatusEnum.Death)? "active" : "")">
-        <div id="head">
+        <div id="head" class="head">
             <div class="eye"></div>
             <div class="eye"></div>
         </div>

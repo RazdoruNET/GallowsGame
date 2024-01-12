@@ -1,7 +1,8 @@
+using Data.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Data.Models.Entity;
+namespace Data;
 
 public class AppDbContext : DbContext
 {

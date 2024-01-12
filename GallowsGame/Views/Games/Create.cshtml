@@ -31,6 +31,7 @@
          
              let form = document.getElementById(form_id);
              let inputs = document.getElementsByClassName('question');
+             let index = inputs.length;
              
              let group = document.createElement('div');
              
@@ -46,36 +47,116 @@
              
              input.classList.add('form-control');
              input.classList.add('question');
-             input.name = "Questions["+inputs.length+"][0]";
+             input.name = "Questions["+index+"][0]";
+             
+             let button = document.createElement('button');
+             
+             button.id = 'button_add_q_'+index;
+             button.innerText = 'Добавить ответ';
+             
+             button.onclick = function(){
+                 addAnswer(index);
+                 return false;
+               };
+             
+             button.type = 'button';
+             button.classList.add('mx-3');
+             button.classList.add('btn');
+             button.classList.add('btn-outline-dark');
+             
+             let button_del = document.createElement('button');
+                      
+             button_del.id = 'button_add_q_'+index;
+             button_del.innerText = 'Удалить вопрос';
+            
+             button_del.onclick = function(){
+               
+               return false;
+             };
+            
+             button_del.type = 'button';
+             button_del.classList.add('mx-3');
+             button_del.classList.add('btn');
+             button_del.classList.add('btn-danger');
+
+             let children = document.createElement('div');
+             
+             children.classList.add('children');
              
              group.appendChild(title);
              group.appendChild(input);
+             group.appendChild(button);
+             group.appendChild(button_del);
              
              form.appendChild(group);
+             form.appendChild(children);
          }
+         
+    function addAnswer(index) {
+        
+        let inputs = document.getElementsByClassName('question');
+        
+        let input_parrent = inputs.item(index);
+
+        let group = document.createElement('div');
+                  
+        group.classList.add('input-group');
+        group.classList.add('p-3');
+        
+        let title = document.createElement('p');
+        
+        title.innerText = 'Ответ - ' + ++inputs.length;
+        title.classList.add('px-3');
+        
+        let input = document.createElement('input');
+        
+        input.classList.add('form-control');
+        input.classList.add('answer');
+        input.name = "Answers["+index+"][0]";
+        
+        let button = document.createElement('button');
+        
+        button.id = 'button_add_q_'+index;
+        button.innerText = 'Удалить ответ';
+        
+        button.onclick = function(){
+            
+            return false;
+        };
+        
+        button.type = 'button';
+        button.classList.add('mx-3');
+        button.classList.add('btn');
+        button.classList.add('btn-outline-danger');
+        
+        group.appendChild(title);
+        group.appendChild(input);
+        group.appendChild(button);
+        
+        input_parrent.parentElement.nextElementSibling.appendChild(group);
+        
+        console.log(index);
+    }
      
     function send_form(form_id) {
              var form = $('#'+form_id);
              var msg   = form.serialize();
-             $.ajax({
-                 type: 'POST',
-                 url: '../Game', 
-                 data: msg,
-                 success: function(data) {
-                    console.log(data);
-                    location.replace('/Games/List');
-                 },
-                 error:  function(){
-                     alert('Ошибка!');
-                 }
-             });
+             //var json = JSON.parse(msg);
+             console.log(msg);
+             
+             //$.ajax({
+             //    type: 'POST',
+             //    url: '../Game', 
+             //    data: msg,
+             //    success: function(data) {
+             //       console.log(data);
+             //       location.replace('/Games/List');
+             //    },
+             //    error:  function(){
+             //        alert('Ошибка!');
+             //    }
+             //});
          
          }
          
-    setInterval(()=> {
-        $('.eye').toggleClass("active");
-        setTimeout(()=> {
-                $('.eye').toggleClass("active");
-            }, 300);
-    }, 5000);
 </script>

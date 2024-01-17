@@ -17,10 +17,10 @@ builder.Services.AddAutoMapper(typeof(ControllerMapperProfile));
 builder.Services.AddAutoMapper(typeof(DTOMapperProfile));
 builder.Services.AddDbContext<AppDbContext>();
 
-builder.Services.AddScoped<IBaseRepositorie<Game>, BaseRepositorie<Game>>();
-builder.Services.AddScoped<IBaseRepositorie<Question>, BaseRepositorie<Question>>();
-builder.Services.AddScoped<IBaseRepositorie<QuestionAnswer>, BaseRepositorie<QuestionAnswer>>();
-builder.Services.AddScoped<IBaseRepositorie<User>, BaseRepositorie<User>>();
+builder.Services.AddScoped<ICRUDRepositorie<Game>, CRUDRepositorie<Game>>();
+builder.Services.AddScoped<ICRUDRepositorie<Question>, CRUDRepositorie<Question>>();
+builder.Services.AddScoped<ICRUDRepositorie<QuestionAnswer>, CRUDRepositorie<QuestionAnswer>>();
+builder.Services.AddScoped<ICRUDRepositorie<User>, CRUDRepositorie<User>>();
 
 builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IUserService, UserService>();

@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repositories;
 
-public class BaseRepositorie<TEntity> : IBaseRepositorie<TEntity> where TEntity : class
+public class CRUDRepositorie<TEntity> : ICRUDRepositorie<TEntity> where TEntity : class
 {
     private readonly AppDbContext _db;
     private readonly DbSet<TEntity> _dbSet;
-    public BaseRepositorie(AppDbContext db)
+    public CRUDRepositorie(AppDbContext db)
     {
         _db = db;
         _dbSet = _db.Set<TEntity>();

@@ -47,7 +47,7 @@
              
              input.classList.add('form-control');
              input.classList.add('question');
-             input.name = "Questions["+index+"][0]";
+             input.name = "Questions["+index+"]";
              
              let button = document.createElement('button');
              
@@ -171,5 +171,11 @@
              //});
          
          }
-         
+        
+    setInterval(()=> {
+            $('.eye').toggleClass("active");
+            setTimeout(()=> {
+                    $('.eye').toggleClass("active");
+                }, 300);
+        }, 5000);
 </script>

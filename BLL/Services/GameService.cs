@@ -12,8 +12,8 @@ namespace BLL.Services;
 public class GameService : IGameService
 {
     private readonly IMapper _mapper;
-    private readonly IBaseRepositorie<Game> _repositorie;
-    public GameService(IMapper mapper, IBaseRepositorie<Game> repositorie)
+    private readonly ICRUDRepositorie<Game> _repositorie;
+    public GameService(IMapper mapper, ICRUDRepositorie<Game> repositorie)
     {
         _mapper = mapper;
         _repositorie = repositorie;

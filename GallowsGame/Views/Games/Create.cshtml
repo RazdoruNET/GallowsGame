@@ -27,66 +27,78 @@
 
 <script>
 
-     function addQuestion() {
-         
-             let form = document.getElementById('add_form');
-             let inputs = document.getElementsByClassName('question');
-             let index = inputs.length;
-             
-             let group = document.createElement('div');
-             
-             group.classList.add('input-group');
-             group.classList.add('p-3');
-             
-             let title = document.createElement('p');
-             
-             title.innerText = 'Вопрос - ' + ++inputs.length;
-             title.classList.add('px-3');
-             
-             let input = document.createElement('input');
-             
-             input.classList.add('form-control');
-             input.classList.add('question');
-             input.name = "Questions["+index+"]";
-             
-             let button = document.createElement('button');
-             
-             button.type = 'button';
-             button.innerText = 'Добавить ответ';
-             button.classList.add('mx-3');
-             button.classList.add('btn');
-             button.classList.add('btn-outline-dark');
-             button.onclick = function(){
-                addAnswer(index);
-                return false;
-             };
-             
-             let button_del = document.createElement('button');
-
-             button_del.innerText = 'Удалить вопрос';
-             button_del.type = 'button';
-             button_del.classList.add('mx-3');
-             button_del.classList.add('btn');
-             button_del.classList.add('btn-danger');
-             button_del.onclick = function(){
-                group.remove();
-                children.remove();
-                return false;
-             };
-
-             let children = document.createElement('div');
-             
-             children.classList.add('children_'+index);
-             children.classList.add('children');
-             
-             group.appendChild(title);
-             group.appendChild(input);
-             group.appendChild(button);
-             group.appendChild(button_del);
-             
-             form.appendChild(group);
-             form.appendChild(children);
-         }
+    function addQuestion() {
+        
+        // ПОЛУЧАЕМ ФОРМУ
+        let form = document.getElementById('add_form');
+        
+        // ПОЛУЧАЕМ ВСЕ ВОПРОСЫ И ВЫЧИСЛЯЕМ ИХ КОЛИЧЕСТВО
+        let inputs = document.getElementsByClassName('question');
+        let index = inputs.length;
+        
+        // СОЗДАЕМ И НАСТРАИВАЕМ ГРУППУ ДЛЯ ДАЛЬНЕЙШЕЙ ВСТАВКИ
+        let group = document.createElement('div');
+        
+        group.classList.add('input-group');
+        group.classList.add('p-3');
+        
+        // СОЗДАЕМ И НАСТРАИВАЕМ ЗАГОЛОВОК
+        let title = document.createElement('p');
+        
+        title.innerText = 'Вопрос - ' + ++inputs.length;
+        title.classList.add('px-3');
+        
+        // СОЗДАЕМ И НАСТРАИВАЕМ INPUT ВОПРОСА
+        let input = document.createElement('input');
+        
+        input.classList.add('form-control');
+        input.classList.add('question');
+        input.name = "Questions["+index+"]";
+        
+        // СОЗДАЕМ И НАСТРАИВАЕМ КНОПКУ ДОБАВЛЕНИЯ ОТВЕТА
+        let button = document.createElement('button');
+        
+        button.type = 'button';
+        button.innerText = 'Добавить ответ';
+        button.classList.add('mx-3');
+        button.classList.add('btn');
+        button.classList.add('btn-outline-dark');
+        button.onclick = function(){
+            addAnswer(index);
+            return false;
+        };
+        
+        // СОЗДАЕМ И НАСТРАИВАЕМ КНОПКУ УДАЛЕНИЯ ОТВЕТА
+        let button_del = document.createElement('button');
+        
+        button_del.innerText = 'Удалить вопрос';
+        button_del.type = 'button';
+        button_del.classList.add('mx-3');
+        button_del.classList.add('btn');
+        button_del.classList.add('btn-danger');
+        button_del.onclick = function(){
+            group.remove();
+            children.remove();
+            return false;
+        };
+        
+        // СОЗДАЕМ КОНТЕЙНЕР ДЛЯ ВЛОЖЕННЫХ ЭЛЕМЕНТОВ
+        let children = document.createElement('div');
+        
+        children.classList.add('children_'+index);
+        children.classList.add('children');
+        
+        // ВКЛАДЫВАЕМ СОЗДАННЫЕ ОБЬЕКТЫ ФОРМЫ В ГРУППУ
+        group.appendChild(title);
+        group.appendChild(input);
+        group.appendChild(button);
+        group.appendChild(button_del);
+        
+        // ВКЛАДЫВАЕМ СОЗДАННУЮ ГРУППУ В ФОРМУ 
+        form.appendChild(group);
+        form.appendChild(children);
+        
+    }
          
     function addAnswer(index) {
         
